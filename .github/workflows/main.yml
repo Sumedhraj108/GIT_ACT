@@ -8,9 +8,9 @@ on:
 jobs:
    build and deploy:
       runs on: ubuntu-latest
-      Steps: 
-        - name: Checkout
-          uses: actions/checkout@v1
+        Steps: 
+           - name: Checkout
+             uses: actions/checkout@v1
 
         - name: Configure AWs Credentials
           Uses: aws-actions/configure-aws-credentials@v1
