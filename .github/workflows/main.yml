@@ -8,16 +8,16 @@ on:
 jobs:
    build and deploy:
       runs on: ubuntu-latest
-        Steps: 
+      Steps: 
            - name: Checkout
              uses: actions/checkout@v1
 
-        - name: Configure AWs Credentials
-          Uses: aws-actions/configure-aws-credentials@v1
-          with:
+           - name: Configure AWs Credentials
+             Uses: aws-actions/configure-aws-credentials@v1
+             with:
              aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
              aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
              aws_region: ap-south-1
 
-        - name: Deploy static site to S3 bucket
-          run: aws S3 sync . s3://mysubbucket --delete
+           - name: Deploy static site to S3 bucket
+             run: aws S3 sync . s3://mysubbucket --delete
